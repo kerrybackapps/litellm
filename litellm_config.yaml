@@ -8,8 +8,9 @@ model_list:
 
 general_settings:
   master_key: os.environ/LITELLM_MASTER_KEY
-  proxy_batch_write_at: 60
-  database_url: os.environ/DATABASE_URL
+  # Allow health checks without authentication
+  public_health_check: true
+  health_check_interval: 30
 
 litellm_settings:
   success_callback: ["prometheus"]
