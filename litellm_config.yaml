@@ -8,10 +8,18 @@ model_list:
 
 general_settings:
   master_key: os.environ/LITELLM_MASTER_KEY
-  # Allow health checks without authentication
-  public_health_check: true
+  # Expose health check without authentication
   health_check_interval: 30
+
+router_settings:
+  # Disable auth for health endpoint
+  disable_auth_checks: false
 
 litellm_settings:
   success_callback: ["prometheus"]
   failure_callback: ["prometheus"]
+  # Set no-auth for health routes
+  pass_through_endpoints:
+    - path: "/health"
+      auth: false
+      target: ""
