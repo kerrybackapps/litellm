@@ -4,7 +4,7 @@ model_list:
       model: openai/moonshotai/kimi-k2.5
       api_key: os.environ/OPENROUTER_API_KEY
       api_base: https://openrouter.ai/api/v1
-
+      max_tokens: 8192
 
 general_settings:
   master_key: os.environ/LITELLM_MASTER_KEY
