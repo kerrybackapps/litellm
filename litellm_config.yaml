@@ -16,6 +16,7 @@ router_settings:
   disable_auth_checks: false
 
 litellm_settings:
+  drop_params: true
   success_callback: ["prometheus"]
   failure_callback: ["prometheus"]
   # Set no-auth for health routes
